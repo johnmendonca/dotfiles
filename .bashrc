@@ -126,6 +126,16 @@ if [ -x /usr/bin/mint-fortune ]; then
      /usr/bin/mint-fortune
 fi
 
+if [ -e /home/john/.nix-profile/etc/profile.d/nix.sh ]; then . /home/john/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Put GHC on the path globally
+GHC_PATH=`stack path | grep compiler-bin | sed -e 's/compiler-bin: //'`
+export PATH="$PATH:$GHC_PATH"
+
