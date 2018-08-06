@@ -10,5 +10,5 @@ templates:
   params:
     author-name: John Mendonca
     author-email: joaosinho@gmail.com
-#    copyright:
+    category: Web
     github-username: johnmendonca
