@@ -12,3 +12,5 @@ templates:
     author-email: joaosinho@gmail.com
     category: Web
     github-username: johnmendonca
+
+allow-newer: true
